@@ -1,5 +1,5 @@
 <?php
-echo "<h1>Introduccion a la programacion orientada a objetos <h1>";
+echo "<h1>Introduccion a la programacion orientada a objetos </h1>";
 class Contacto{
     var $nombre;
     var $apellido;
@@ -11,15 +11,15 @@ class Contacto{
         $this->nombre = $miNombre;
     }
     function getNombre(){
-        $this->nombre;
+        return $this->nombre;
     }
     
 }
 //instanciar o utilizar clase
-$mi_contacto= new Contacto;
+$mi_contacto = new Contacto;
 //accedo a las funciones o metodos  mediante $nombre_del_obejeto->nombre
 $mi_contacto->setNombre("jairo");
-echo "el contacto se llama".$mi_nombre->getNombre();
+echo "el contacto se llama ".$mi_contacto->getNombre();
 
 //o bien accedo a las variables o atibutos mediante $nombre_del_objeto
 echo "<br> el contacto se llama $mi_contacto->nombre";
