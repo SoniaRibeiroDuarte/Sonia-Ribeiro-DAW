@@ -16,7 +16,7 @@ class Contacto {
     var $apellido;
     var $edad;
     var $email;
-    
+
     //constructor nuevo
     function __construct($miNombre,$miApellidos,$miEdad,$miEmail){
         $this->nombre = $miNombre;
