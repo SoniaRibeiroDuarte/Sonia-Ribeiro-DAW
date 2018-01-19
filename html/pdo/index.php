@@ -62,3 +62,27 @@ while ($personas = $resultado->fetch(PDO::FETCH_BOUND)){
 //Recorro el resultado
     echo $id." ".$nombre." ".$activo."<br>";
 }
+echo "<br>";
+
+//Iniciamos la trasnacción para que no ejecute cada una de ellas por separado
+$db->beginTransaction();
+//Declaramos todas las consultas
+$resultado = $db->exec('INSERT INTO personas (nombre) VALUES ("José"),("Luís")');
+$resultado = $db->exec('DELETE FROM personas WHERE id>3');
+$resultado = $db->exec('UPDATE personas SET activo=0 WHERE activo=1');
+//Realizamos el commit para que se ejecuten todas las consultas
+$db->commit();
+//Mensaje
+if ($resultado){
+    echo "Se han activado $resultado registros.";
+}
+echo "<br>";
+
+//Consulta preparada
+$nombres = ['Jorgito', 'Juanito', 'Jaimito'];
+$resultado->prepare('INSERT INTO personas (nombre) VALUES (?)');
+//O bien $resultado->prepare('INSERT INTO personas (nombre) VALUES (:nombre)');
+foreach ($nombres as $nombre){
+    $resultado->bind_param(1, $nombre); //O bien $resultado->bind_param(':nombre', $nombre);
+    $resultado->execute();
+}
