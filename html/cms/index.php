@@ -1,11 +1,8 @@
 <?php
 namespace App;
-use App\Controller\ContactoController;
-//conexion a la base de datos
-require ('conexion.php');
+use App\Controller\UsuarioController;
 
-echo "<h1>indroduccion a la programacion orientada a objetos</h1>";
-echo "<h2>Ejemplo 7 : gestion de las vistas mediante helpers)</h2>";
+echo "<h1>Cms</h1>";
 
 //defino la funcion que que autocargara las clases cuando se instacien
 spl_autoload_register('App\autoload');
@@ -29,7 +26,7 @@ function autoload ($clase, $dir=null){
     }
 }
 //instacio controlador
-$controller = new ContactoController;
+$controller = new UsuarioController;
 
 //ejecuto el metodo por defecto del controlador
 

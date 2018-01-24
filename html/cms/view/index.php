@@ -5,7 +5,12 @@
         <title></title>
     </head>
     <body>
-        <h3><?php echo "el contacto es $datos->nombre $datos->apellido"?></h3>
-        <h4><?php echo "el email del contacto es $datos->email"?></h4>
+        <h3>Id <?php echo "$datos->id"?></h3>
+        <h3>Usuario <?php echo "$datos->usuario"?></h3>
+        <h3>Clave<?php echo "$datos->clave"?></h3>
+        <h3>Fecha acceso <?php echo "$datos->fecha_acceso"?></h3>
+        <h3>Activo <?php echo "$datos->activo"?></h3>
+        <h3>Usuario <?php echo "$datos->usuarios"?></h3>
+        
     </body>
 </html>
