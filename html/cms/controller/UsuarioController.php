@@ -8,12 +8,23 @@ use App\Helper\DbHelper;
 class UsuarioController {
     
     var $db;
+    var $viewHelper;
     function __construct() {
         
         $dbHelper = new DbHelper();
         $this->db = $dbHelper->db ;
+        //instancio el viewHelper
+        $view = new ViewHelper();
+        $this->view = $viewHelper;
     }
-
+    public function acceso() {
+        
+        //instancio el viewHelper
+        $view = new ViewHelper();
+        
+        //le paso los datos
+        $this ->view->vista("acesso",NULL);
+    }
     public function index() {
         //inicializo la conexion
         $db = new DbHelper();
@@ -26,11 +37,8 @@ class UsuarioController {
         //paso esa variable al constructor de usuario
         $usuario = new Usuario($data);
         
-        //instancio el viewHelper
-        $view = new ViewHelper();
-        
         //le paso los datos
-        $view->vista("index",$usuario);
+        $this->view->vista("index",$usuario);
         
     }
 }

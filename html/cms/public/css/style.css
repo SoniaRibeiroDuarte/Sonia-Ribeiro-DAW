@@ -1,0 +1,34 @@
+/* body */
+body{
+    margin: 0px;
+    pading: 0px;
+    font-family: arial;
+}
+
+/* Login */
+#contLog{
+    border: solid black 1px ;
+    border-radius: 2px;
+    width: 50%;
+    margin-left: 25%;
+}
+/* Footer */
+#footer{
+    background-color: black;
+    width: 100%;
+    height: 90px;
+}
+#logopie{
+    width:120px;
+    margin-left: 20px;
+    margin-top: 20px;
+    float: left;
+}
+#txtfooter{
+    float: right;
+    margin-right: 20px;
+    margin-top: 20px;
+    color: white;
+    text-align: center;
+
+}
