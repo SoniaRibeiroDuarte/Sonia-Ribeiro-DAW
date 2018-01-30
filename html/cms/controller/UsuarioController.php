@@ -14,16 +14,14 @@ class UsuarioController {
         $dbHelper = new DbHelper();
         $this->db = $dbHelper->db ;
         //instancio el viewHelper
-        $view = new ViewHelper();
+        $viewHelper = new ViewHelper();
         $this->view = $viewHelper;
     }
     public function acceso() {
         
-        //instancio el viewHelper
-        $view = new ViewHelper();
-        
         //le paso los datos
-        $this ->view->vista("acesso",NULL);
+        $this ->view->vista("acceso",'');
+        
     }
     public function index() {
         //inicializo la conexion

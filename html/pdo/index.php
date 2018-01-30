@@ -80,9 +80,9 @@ echo "<br>";
 
 //Consulta preparada
 $nombres = ['Jorgito', 'Juanito', 'Jaimito'];
-$resultado->prepare('INSERT INTO personas (nombre) VALUES (?)');
-//O bien $resultado->prepare('INSERT INTO personas (nombre) VALUES (:nombre)');
+$resultado = $db->prepare('INSERT INTO personas (nombre) VALUES (?)');
+//O bien $resultado = $db->prepare('INSERT INTO personas (nombre) VALUES (:nombre)');
 foreach ($nombres as $nombre){
-    $resultado->bind_param(1, $nombre); //O bien $resultado->bind_param(':nombre', $nombre);
+    $resultado->bindParam(1, $nombre); //O bien $resultado->bindParam(':nombre', $nombre);
     $resultado->execute();
 }

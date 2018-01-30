@@ -7,10 +7,22 @@ body{
 
 /* Login */
 #contLog{
-    border: solid black 1px ;
-    border-radius: 2px;
+    margin-top: 200px;
+    border: solid black 2px ;
+    border-radius: 10px;
     width: 50%;
     margin-left: 25%;
+    margin-bottom: 200px;
+}
+#logoacc{
+    width:300px;
+    margin-left: 150px;
+}
+.datosus{
+    margin-left: 30%;
+}
+.intus{
+    
 }
 /* Footer */
 #footer{

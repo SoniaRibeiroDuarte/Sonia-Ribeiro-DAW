@@ -7,7 +7,6 @@ $public ='/cms/public/';
 require ("../view/partials/header.php");
 //ruta de la home
 $home ='/cms/public/index.php/';
-echo str_replace($home,'',$_SERVER['REQUEST_URI']);
 
 
 
