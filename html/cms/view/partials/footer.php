@@ -1,8 +1,8 @@
 <?php
 ?>
 <div id="footer">
-    <img id ="logopie" src="<?php echo $public.'img/logo.png'?>">
-    <p id="txtfooter">Sonia<br> Ribeiro - Duarte <br>Perez</p>
+    <img id ="logopie" src="<?php echo $public.'img/logo2.png'?>">
+    <img id ="nombre" src="<?php echo $public.'img/nombre.png'?>">
 </div>
 </body>
 </html>

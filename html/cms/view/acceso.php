@@ -1,12 +1,14 @@
 <?php
 //esto es la vista de acceso
 ?>
+<div id="conlog">
 <div id="contLog">
-    <img id ="logoacc" src="../../public/img/logo.png">
-    <h3 class="datosus">Usuario:</h3><br>
+    <img id ="logoacc" src="../../public/img/logo2.png">
+    <p class="datosus">Usuario:</p>
     <input class="intus" type="text">
-    <h3 class="datosus">Contraseña:</h3><br>
+    <p class="datosus">Contraseña:</p>
     <input class="intus"type="text">
+</div>
 </div>
 
 
