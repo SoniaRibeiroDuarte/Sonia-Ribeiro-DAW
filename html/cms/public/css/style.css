@@ -9,7 +9,7 @@ body{
 #conlog{
     padding-top: 150px;
     background-image: url("../img/fondo.jpg");
-    padding-bottom: 253px;
+    padding-bottom: 219px;
     background-size: cover;
     
 }
@@ -27,8 +27,17 @@ body{
     width:50%;
     margin-left:25%;
 }
+#meslo{
+    margin-left:34%;
+    font-size: 14px;
+}
+.rojo{
+    color: #F78181;
+    margin-left:3%;
+}
 .datosus{
     margin-left: 32%;
+    
 }
 .intus{
     margin-left: 32%;
@@ -59,6 +68,47 @@ body{
 #buttonlog:hover{
   background: #cac3d6;
   text-decoration: none;
+}
+/* Panel */
+#conpan{
+    background-image: url("../img/fondo.jpg");
+    padding-bottom: 219px;
+    background-size: cover;
+}
+#menu{
+    height: 60px;
+    background-color: #fffffe;
+    
+}
+#titulo{
+   float: left;
+   margin-left: 5%; 
+}
+nav{
+    float: left;
+    margin-left: 50%;  
+}
+ul{
+    
+    list-style-type: none;
+    
+}
+
+a{
+    text-decoration: none;
+    color: #207511;
+}
+li{
+    border-bottom: solid 2px #ffffff;
+    float: left;
+    text-align: center;
+    padding: 02px 10px;
+    margin: 0px 10px;
+    height: 100%;
+    line-height: 25px;
+}
+li:hover{
+    border-bottom: solid 2px #F0E439;
 }
 /* Footer */
 #footer{

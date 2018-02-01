@@ -3,8 +3,8 @@
 ?>
 <div id="conlog">
 <div id="contLog">
-    <img id ="logoacc" src="../../public/img/logo2.png">
-    <span><?php echo $datos->mensaje; ?></span>
+    <img id ="logoacc" src="../../public/img/logo2.png"><br>
+    <span id="meslo"><?php echo $datos->mensaje; ?></span>
     <form method="POST">
         <p class="datosus">Usuario:</p>
         <input class="intus" type="text" name="usuario">

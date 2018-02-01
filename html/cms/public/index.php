@@ -1,5 +1,6 @@
 <?php
 namespace App;
+session_start();
 use App\Controller\UsuarioController;
 //ruta de la publica
 $public ='/cms/public/';

@@ -18,7 +18,16 @@ class UsuarioController {
         $this->view = $viewHelper;
     }
     public function acceso() {
-        $datos->mensaje = "hola";
+        //inicio mensaje
+        $datos = new \stdClass();
+        if ($_SESSION['usuario']) {
+            
+           $datos->usuario = $_SESSION['usuario'];
+           $vista = "panel"; 
+        }else{
+        $vista = "acceso"; 
+        }
+        $datos->mensaje = "Introduce usuario y contraseña";
         if(isset($_POST['acceder'])){
             
             $usuario = filter_input(INPUT_POST,'usuario',FILTER_SANITIZE_STRING);
@@ -26,14 +35,15 @@ class UsuarioController {
             if($usuario AND $clave){
                 //compruebo que el usuario existe
                 if($this->comprueba_usuario($usuario,$clave)){
-                    $datos->mensaje = "hola majete";
+                    $datos->usuario = $_SESSION['usuario'];
+                    $vista = "panel";
                 }else{
-                    $datos->mensaje = " usuario  y/o clave incorectos";
+                    $datos->mensaje = "<span class='rojo'>Usuario o clave incorrecto</span>";
                 }
             }
         }
         //le paso los datos
-        $this->view->vista("acceso",$datos);
+        $this->view->vista($vista,$datos);
         
     }
     function comprueba_usuario($usuario,$clave){
@@ -43,6 +53,14 @@ class UsuarioController {
         $resultado = $this->db->query("SELECT * FROM usuarios where usuario='".$usuario."'");
         //asigno la consulta a una variable
         $data = $resultado->fetch(\PDO::FETCH_OBJ);
+        //compruebo la contraseña
+        if($data AND hash_equals($data->clave, crypt($clave, $data->clave))){
+            //añado el nombre de usuario a la sesion
+            $_SESSION['usuario'] = $data ->usuario;
+            return 1;
+        }else{
+            return 0;
+        }
         //return
         return($data) ? 1 : 0;
     }
