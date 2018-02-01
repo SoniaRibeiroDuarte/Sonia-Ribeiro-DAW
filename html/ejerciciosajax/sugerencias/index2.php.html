@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>ejercicio</title>
+        <meta charset="UTF-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script>
+       window.onload = function(){
+       document.getElementById("nombre").addEventListener("keyup", buscar);
+        }
+        function buscar(){ 
+            var nombre = document.getElementById("nombre").value;
+            if(nombre.length !== 0){
+                var nom = new XMLHttpRequest();
+                nom.onreadystatechange = function() {
+                    if (this.readyState === 4 && this.status === 200) {
+                        document.getElementById("solucion").innerHTML = this.responseText;
+                    }
+                };
+                //nom.open("GET","suge.php?nombre="+nombre,true);
+                nom.open("POST","suge.php",true);
+                nom.setRequestHeader("Content")
+                nom.send();
+            }
+        }
+        </script>
+    </head>
+    <body>
+        <h2>Sugerencia</h2>
+        <p>Escibre un nombre en el cuadrado inferior</p>
+        <p>Nombre:</p>
+        <form>
+        <input type="text" id="nombre">
+        </form>
+        <p id="solucion"></p>
+    </body>
+</html>

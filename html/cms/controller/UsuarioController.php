@@ -18,10 +18,33 @@ class UsuarioController {
         $this->view = $viewHelper;
     }
     public function acceso() {
-        
+        $datos->mensaje = "hola";
+        if(isset($_POST['acceder'])){
+            
+            $usuario = filter_input(INPUT_POST,'usuario',FILTER_SANITIZE_STRING);
+            $clave = filter_input(INPUT_POST,'clave',FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            if($usuario AND $clave){
+                //compruebo que el usuario existe
+                if($this->comprueba_usuario($usuario,$clave)){
+                    $datos->mensaje = "hola majete";
+                }else{
+                    $datos->mensaje = " usuario  y/o clave incorectos";
+                }
+            }
+        }
         //le paso los datos
-        $this ->view->vista("acceso",'');
+        $this->view->vista("acceso",$datos);
         
+    }
+    function comprueba_usuario($usuario,$clave){
+         //inicializo la conexion
+        $db = new DbHelper();
+        //Select con OBJ
+        $resultado = $this->db->query("SELECT * FROM usuarios where usuario='".$usuario."'");
+        //asigno la consulta a una variable
+        $data = $resultado->fetch(\PDO::FETCH_OBJ);
+        //return
+        return($data) ? 1 : 0;
     }
     public function index() {
         //inicializo la conexion
