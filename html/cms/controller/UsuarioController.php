@@ -20,12 +20,12 @@ class UsuarioController {
     public function acceso() {
         //inicio mensaje
         $datos = new \stdClass();
-        if ($_SESSION['usuario']) {
+        if (isset($_SESSION['usuario']) AND $_SESSION['usuario']) {
             
            $datos->usuario = $_SESSION['usuario'];
            $vista = "panel"; 
         }else{
-        $vista = "acceso"; 
+            $vista = "acceso"; 
         }
         $datos->mensaje = "Introduce usuario y contraseña";
         if(isset($_POST['acceder'])){
@@ -47,8 +47,7 @@ class UsuarioController {
         
     }
     function comprueba_usuario($usuario,$clave){
-         //inicializo la conexion
-        $db = new DbHelper();
+        
         //Select con OBJ
         $resultado = $this->db->query("SELECT * FROM usuarios where usuario='".$usuario."'");
         //asigno la consulta a una variable
@@ -65,19 +64,23 @@ class UsuarioController {
         return($data) ? 1 : 0;
     }
     public function index() {
-        //inicializo la conexion
-        $db = new DbHelper();
         //Select con OBJ
-        $resultado = $this->db->query('SELECT * FROM usuarios where id=1');
+        $resultado = $this->db->query("SELECT * FROM usuarios");
+        //Asigno la consulta a una variable
+        while ($data = $resultado->fetch(\PDO::FETCH_OBJ)){ //Recorro el resultado
+            $usuarios[] = new Usuario($data);
+        }
         
-        //asigno la consulta a una variable
-        $data = $resultado->fetch(\PDO::FETCH_OBJ);
+        //Le paso los datos
+        $this->view->vista("usuarios",$usuarios);
         
-        //paso esa variable al constructor de usuario
-        $usuario = new Usuario($data);
-        
-        //le paso los datos
-        $this->view->vista("index",$usuario);
-        
+    }
+    
+    public function salir() {
+        //añado el nombre de usuario a la sesion
+        $_SESSION['usuario'] = "";
+        //le redirijo al panel
+        header("Location:".$_SESSION['home']."panel");
+            
     }
 }
