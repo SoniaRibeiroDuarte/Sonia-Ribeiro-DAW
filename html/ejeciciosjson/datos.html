@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Datos</title>
+        <meta charset="UTF-8">
+        
+        <script>
+            window.addEventListener("load",inicio);
+            function inicio(){
+                documet.getElementById("mostrar").addEventListener("click",mostar);
+            }
+            function mostrar(){
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                         var objeto = JSON.parse(this.responseText);
+                        //Mostramos los datos
+                        document.getElementById("parrafo").innerHTML = objeto.nombre + " nacio en " + objeto.nacimiento + " en " + objeto.pais + "<br/>";
+                        //Si queremos convertir un objeto Javascript en una cadena
+                        var cadena = JSON.stringify(objeto);
+                        document.getElementById("parrafo").innerHTML += "El objeto " + objeto + " en modo cadena es " + cadena;
+                    }
+                }
+                 xhr.open("GET", "datos.php", true);
+                 xhr.send();
+            }
+        </script>
+    </head>
+    <body>
+        <button id ="mostrar">mostrar</button>
+        <p id="parrafo"></p>
+    </body>
+</html>
