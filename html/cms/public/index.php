@@ -6,6 +6,7 @@ use App\Controller\UsuarioController;
 $public ='/cms/public/';
 //llamo a la cabecera
 require ("../view/partials/header.php");
+
 //ruta de la home
 $home ='/cms/public/index.php/';
 
@@ -51,6 +52,12 @@ switch ($ruta){
         $controller = new UsuarioController;
         //le mando al metodo salir
         $controller->index();
+    break;
+    case 'panel/usuarios/crear':
+       //instacio el controlador
+        $controller = new UsuarioController;
+        //le mando al metodo crear
+        $controller->crear();
     break;
     case 'panel/salir':
        //instacio el controlador

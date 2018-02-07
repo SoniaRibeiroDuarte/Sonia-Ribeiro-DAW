@@ -2,13 +2,13 @@
 
 ?>
     <div id="menu">
-        <h2 id="titulo">Hola, <?php echo $_SESSION['usuario'];?></h2>
-        <nav>
-            <ul>
-                <li><a href="<?php echo $_SESSION['home'] ?>panel">Inicio</li>
-                <li><a href="">Noticias</li>
-                <li><a href="<?php echo $_SESSION['home'] ?>panel/usuarios">Usuarios</li>
-                <li><a href="<?php echo $_SESSION['home'] ?>panel/salir">Salir</li>
+        <h2 id="titulo">Bienvenido</h2>
+        <nav id="navmenu">
+            <ul id="ulmenu">
+                <li class="limenu"><a class="amenu" href="<?php echo $_SESSION['home'] ?>panel">Inicio</a></li>
+                <li class="limenu"><a class="amenu" href="">Noticias</a></li>
+                <li class="limenu"><a class="amenu" href="<?php echo $_SESSION['home'] ?>panel/usuarios">Usuarios</a></li>
+                <li class="limenu"><a class="amenu" href="<?php echo $_SESSION['home'] ?>panel/salir">Salir</a></li>
             </ul>
         </nav>
     </div>

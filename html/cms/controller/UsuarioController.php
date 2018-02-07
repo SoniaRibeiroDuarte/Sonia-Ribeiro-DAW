@@ -83,4 +83,25 @@ class UsuarioController {
         header("Location:".$_SESSION['home']."panel");
             
     }
+    public function crear() {
+        //create
+        $nombre = "usuario".rand(1000, 9999);
+        $registros = $this->db->exec('INSERT INTO usuarios (usuario) VALUES ("'.$nombre.'")');
+        if($registros){
+            $mensaje[] = [
+                'tipo' => 'success',
+                'texto' => "El usuario $nombre  se a creado correctamente"
+            ];
+            
+        }else{
+            $mensaje[] = [
+                'tipo' => 'danger',
+                'texto' => " A ocuurido un error al añadir usuario"
+            ];
+        }
+        $_SESSION['mensajes'] = $mensaje;
+        //Le paso los datos
+        header("Location:".$_SESSION['home']."panel/usuarios");
+        
+    }
 }

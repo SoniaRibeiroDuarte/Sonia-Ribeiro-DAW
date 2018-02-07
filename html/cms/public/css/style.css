@@ -5,23 +5,26 @@ body{
     font-family: helvetica;
 }
 
-/* Login */
+/* Comunes */
 #conlog{
-    padding-top: 150px;
     background-image: url("../img/fondo.jpg");
-    padding-bottom: 219px;
     background-size: cover;
     
 }
+
+/* Login */
 #contLog{
     border: solid black 1px;
     border-radius: 10px;
     width: 50%;
-    margin-left: 25%;
-    padding-bottom: 30px;
-    padding-top: 40px;
+    padding-bottom: 60px;
+    padding-top: 20px;
     background: #fffffe;
     opacity: 0.90;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);    
 }
 #logoacc{
     width:50%;
@@ -79,21 +82,21 @@ body{
    float: left;
    margin-left: 5%; 
 }
-nav{
+#navmenu{
     float: left;
     margin-left: 50%;  
 }
-ul{
+#ulmenu{
     
     list-style-type: none;
     
 }
 
-a{
+.amenu{
     text-decoration: none;
     color: black;
 }
-li{
+.limenu{
     border-bottom: solid 2px #ffffff;
     float: left;
     text-align: center;
@@ -102,7 +105,7 @@ li{
     height: 100%;
     line-height: 25px;
 }
-li:hover{
+.limenu:hover{
     border-bottom: solid 2px #E5D2E5;
 }
 /* Usuarios */
@@ -110,12 +113,57 @@ li:hover{
     border: solid black 1px;
     border-radius: 10px;
     width: 50%;
-    margin-left: 25%;
-    padding-bottom: 30px;
-    padding-top: 40px;
+    padding-bottom: 60px;
+    padding-top: 20px;
     background: #fffffe;
-    opacity: 0.90;    
+    opacity: 0.90;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);    
 }
+#titulous{
+    margin-left: 6%;
+}
+#titulosus{
+    height: 20px;
+    width: 100%;
+    list-style: none;
+}
+#titizq{
+    float: left;
+
+}
+#negro{
+    color:black;
+    text-decoration: none;    
+}
+#titdrch{
+    float: left;
+    margin-left: 60%;
+   
+}
+#acciones{
+    float: right;
+    margin-right: 20%;
+}
+.acciones2{
+    margin-left: 4px;
+    color:black;
+}
+#activo{
+    color: #99ff99;
+}
+#activo :hover{
+    color: #ff6666;
+}
+#inactivo{
+    color: #ff6666;
+}
+#inactivo :hover{
+    color: #99ff99;
+}
+
 /* Footer */
 #footer{
 

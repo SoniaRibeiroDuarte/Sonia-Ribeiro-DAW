@@ -2,7 +2,7 @@
 //esto es la vista de acceso
 ?>
 <div id="conlog">
-<div id="contusu">
+   <div id="contLog">
     <img id ="logoacc" src="../../public/img/logo2.png"><br>
     <span id="meslo"><?php echo $datos->mensaje; ?></span>
     <form method="POST">
