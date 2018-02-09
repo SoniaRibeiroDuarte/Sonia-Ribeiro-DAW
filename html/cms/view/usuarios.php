@@ -18,12 +18,14 @@
                         </a>    
                     </li>
                     <li id="acciones">
-                        <a class="acciones2" href=""><i class="far fa-edit"></i></a>
+                        <?php $ruta = $_SESSION['home']."panel/usuarios/editar/".$dato->id ?>
+                        <a class="acciones2" href="<?php echo $ruta ?>"><i class="far fa-edit"></i></a>
                         <?php $color = ($dato->activo == 1) ? 'activo':'inactivo';?>
                         <?php $texto = ($dato->activo == 1) ? 'desactivar':'activar';?>
-                        <?php $ruta = $_SESSION['home']."panel/usuarios/".$texto-"/".$dato->id;?>
+                        <?php $ruta = $_SESSION['home']."panel/usuarios/".$texto."/".$dato->id;?>
                         <a id="<?php echo $color?>" class="acciones2"  href="<?php echo $ruta ?>" title="<?php echo $texto?>"><i class="fas fa-check"></i></a>
-                        <a class="acciones2" href=""><i class="far fa-trash-alt"></i></a>
+                         <?php $ruta = $_SESSION['home']."panel/usuarios/borrar"."/".$dato->id ?>
+                        <a class="acciones2" href="<?php echo $ruta ?>" title="borrar"><i class="far fa-trash-alt"></i></a>
                     </li>
                 </ul>    
             <?php } ?>
