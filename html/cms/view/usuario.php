@@ -1,6 +1,6 @@
+<div id="conlog">
 <?php require ("partials/menu.php");?>
 <?php require ("partials/mensajes.php");?>
-<div id="conlog">
     <div id="contusu">
         <h2>Editar usuario</h2>
         <form method="POST">

@@ -1,13 +1,15 @@
+<div id="conlog">
 <?php require("partials/menu.php") ?>
 <?php require("partials/mensajes.php") ?>
-<div id="conlog">
     <div id="contusu">
         <h2 id="titulous">Usuarios</h2>
-        <a class="añadir"  href="<?php echo $_SESSION['home'] ?>panel/usuarios/crear">
-                <i class="fas fa-plus"></i>
-        </a>
+        
             <ul id="titulosus">
-                <li id="titizq">Usuarios</li>
+                <li id="titizq">Usuarios
+                    <a class="añadir"  href="<?php echo $_SESSION['home'] ?>panel/usuarios/crear">
+                        <i class="fas fa-plus"></i>
+                    </a>
+                </li>
                 <li id="titdrch">Acciones</li>
             </ul>    
             <?php foreach ($datos as $dato){ ?>
