@@ -5,7 +5,7 @@ use App\Model\Noticia;
 use App\Helper\ViewHelper;
 use App\Helper\DbHelper;
 
-class UsuarioController {
+class NoticiaController {
     
     var $db;
     var $viewHelper;
@@ -16,6 +16,39 @@ class UsuarioController {
         //instancio el viewHelper
         $viewHelper = new ViewHelper();
         $this->view = $viewHelper;
+    }
+    public function index() {
+        //Select con OBJ
+        $resultado = $this->db->query("SELECT * FROM noticias");
+        //Asigno la consulta a una variable
+        while ($data = $resultado->fetch(\PDO::FETCH_OBJ)){ //Recorro el resultado
+            $noticias[] = new Noticia($data);
+        }
+        
+        //Le paso los datos
+        $this->view->vista("noticias",$noticias);
+        
+    }
+    public function crear() {
+        //create
+        $nombre = "entrada".rand(1000, 9999);
+        $registros = $this->db->exec('INSERT INTO noticias (titulo) VALUES ("'.$nombre.'")');
+        if($registros){
+            $mensaje[] = [
+                'tipo' => 'success',
+                'texto' => "La noticia $nombre  se a creado correctamente"
+            ];
+            
+        }else{
+            $mensaje[] = [
+                'tipo' => 'danger',
+                'texto' => " A ocuurido un error al añadir la noticia"
+            ];
+        }
+        $_SESSION['mensajes'] = $mensaje;
+        //Le paso los datos
+        header("Location:".$_SESSION['home']."panel/noticias");
+        
     }
     function activar($id){
 
@@ -106,36 +139,38 @@ class UsuarioController {
 
         if ($id) {
             if(isset($_POST['guardar']) AND  $_POST['guardar'] == "Guardar"){
-                $titulo = filter_input(INPUT_POST, 'usuario', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-                $usuarios = (filter_input(INPUT_POST, 'usuarios', FILTER_SANITIZE_STRING)) == 'on' ? 1 : 0;
-                $noticias = (filter_input(INPUT_POST, 'noticias', FILTER_SANITIZE_STRING)) == 'on' ? 1 : 0;
+                $titulo = filter_input(INPUT_POST, 'titulo', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+                $entradilla = filter_input(INPUT_POST, 'entradilla', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+                $texto = filter_input(INPUT_POST, 'texto', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
                 $this->db->beginTransaction();
-                $this->db->exec("UPDATE usuarios SET usuario='".$usuario."' WHERE id='".$id."'");
-                $this->db->exec("UPDATE usuarios SET usuarios='".$usuarios."' WHERE id='".$id."'");
-                $this->db->exec("UPDATE usuarios SET noticias='".$noticias."' WHERE id='".$id."'");
+                
+                $this->db->exec("UPDATE noticias SET titulo='".$titulo."' WHERE id='".$id."'");
+                $this->db->exec("UPDATE noticias SET entradilla='".$entradilla."' WHERE id='".$id."'");
+                $this->db->exec("UPDATE noticias SET texto='".$texto."' WHERE id='".$id."'");
+                
                 $this->db->commit();
                 
                 $mensaje[] = ['tipo' => 'success',
-                    'texto' => 'El usuario <strong>'.$usuario.'</strong> se ha editado correctamente'];
-                header("location: " . $_SESSION['home'] . "panel/usuarios");
+                    'texto' => 'La noticia <strong>'.$titulo.'</strong> se ha editado correctamente'];
+                header("location: " . $_SESSION['home'] . "panel/noticias");
                 
             }else{
-               $resultado = $this->db->query("SELECT * FROM usuarios WHERE id='" . $id . "'");
-                $usuario = $resultado->fetch(\PDO::FETCH_OBJ);
-                if ($usuario) {
-                    $this->view->vista('usuario', $usuario);
+               $resultado = $this->db->query("SELECT * FROM noticias WHERE id='" . $id . "'");
+                $noticia = $resultado->fetch(\PDO::FETCH_OBJ);
+                if ($noticia) {
+                    $this->view->vista('noticia', $noticia);
                 } else {
                     $mensaje[] = ['tipo' => 'danger',
-                        'texto' => 'Ha ocurrido un error al editar el usuario'];
+                        'texto' => 'Ha ocurrido un error al editar la noticia'];
                     $_SESSION['mensajes'] = $mensaje;
-                    header("location: " . $_SESSION['home'] . "panel/usuarios");
+                    header("location: " . $_SESSION['home'] . "panel/noticias");
                 } 
             }           
         } else {
             $mensaje[] = ['tipo' => 'danger',
-                'texto' => 'Ha ocurrido un error al editar el usuario'];
+                'texto' => 'Ha ocurrido un error al editar la noticia'];
             $_SESSION['mensajes'] = $mensaje;
-            header("location: " . $_SESSION['home'] . "panel/usuarios");
+            header("location: " . $_SESSION['home'] . "panel/noticias");
         }
     }
 

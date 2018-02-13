@@ -2,6 +2,7 @@
 namespace App;
 session_start();
 use App\Controller\UsuarioController;
+use App\Controller\NoticiaController;
 //ruta de la publica
 $public ='/cms/public/';
 //llamo a la cabecera
@@ -162,6 +163,20 @@ if (count($array_ruta) == 4){
         case 'panel/usuarios/crear':
             //Instancio el controlador
             $controller = new UsuarioController;
+
+            //le mando al metodo index
+            $controller->crear();
+            break;
+        case 'panel/noticias':
+            //Instancio el controlador
+            $controller = new NoticiaController;
+
+            //le mando al metodo index
+            $controller->index();
+            break;
+        case 'panel/noticias/crear':
+            //Instancio el controlador
+            $controller = new NoticiaController;
 
             //le mando al metodo index
             $controller->crear();

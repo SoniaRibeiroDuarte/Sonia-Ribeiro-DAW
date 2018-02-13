@@ -3,10 +3,9 @@
 <?php require("partials/mensajes.php") ?>
     <div id="contusu">
         <h2 id="titulous">Usuarios</h2>
-        
             <ul id="titulosus">
                 <li id="titizq">Usuarios
-                    <a class="añadir"  href="<?php echo $_SESSION['home'] ?>panel/usuarios/crear">
+                    <a class="acciones2" class="añadir"  href="<?php echo $_SESSION['home'] ?>panel/usuarios/crear">
                         <i class="fas fa-plus"></i>
                     </a>
                 </li>

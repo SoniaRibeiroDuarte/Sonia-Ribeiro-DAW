@@ -3,15 +3,12 @@ body{
     margin: 0px;
     padding: 0px;
     font-family: helvetica;
-}
-
-/* Comunes */
-#conlog{
     background-image: url("../img/fondo.jpg");
-    background-size: cover;
-    
 }
-
+/*comunes*/
+#conlog{
+   
+}
 /* Login */
 #contLog{
     border: solid black 1px;
@@ -74,21 +71,24 @@ body{
 }
 /* Menu */
 #menu{
-    height: 60px;
+    height: 80px;
     background-color: #fffffe;
     
 }
-#titulo{
+#logomenu{
    float: left;
-   margin-left: 5%; 
+   margin-left: 2%; 
+   width: 150px;
 }
 #navmenu{
-    float: left;
-    margin-left: 50%;  
+    float: right;
+    width: 80%;
+    padding-right: 2%;
 }
 #ulmenu{
-    
+    float: right;
     list-style-type: none;
+    margin-top: 30px;
     
 }
 
@@ -104,31 +104,29 @@ body{
     margin: 0px 10px;
     height: 100%;
     line-height: 25px;
+    font-size: 20px;
 }
 .limenu:hover{
     border-bottom: solid 2px #E5D2E5;
 }
-/* Usuarios */
+/* Usuarios y Entradas*/
 #contusu{
-    border: solid black 1px;
-    border-radius: 10px;
-    width: 50%;
+    margin-top: 50px;
+    margin-bottom: 50px;
     padding-bottom: 60px;
     padding-top: 20px;
     background: #fffffe;
     opacity: 0.90;
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);    
+    position: relative;    
 }
 #titulous{
-    margin-left: 6%;
+    margin-left: 10%;
 }
 #titulosus{
     height: 20px;
-    width: 100%;
     list-style: none;
+    margin-left: 10%;
+    padding: 0px;
 }
 #titizq{
     float: left;
@@ -139,13 +137,13 @@ body{
     text-decoration: none;    
 }
 #titdrch{
-    float: left;
-    margin-left: 60%;
+    float: right;
+    margin-right: 10%;
    
 }
 #acciones{
     float: right;
-    margin-right: 20%;
+    margin-right: 10%;
 }
 .acciones2{
     margin-left: 4px;
@@ -163,12 +161,13 @@ body{
 #inactivo :hover{
     color: #99ff99;
 }
+/* Usuario y Entrada*/
 
 /* Footer */
 #footer{
 
     background: linear-gradient(to bottom, rgba(229,229,229,0) 0%,rgba(229,229,229,0.2) 5%,rgba(224,213,224,0.52) 13%,rgba(224,213,224,1) 25%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00E5D2E5', endColorstr='#E5D2E5',GradientType=0 ); /* IE6-9 */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00fffffe', endColorstr='#fffffe',GradientType=0 ); /* IE6-9 */
     height: 92px;
     margin-top: -30px;
 }
@@ -183,4 +182,7 @@ body{
     float: right;
     margin-right: 20px;
     margin-top: 28px;
+}
+@media only screen and (max-width: 768px) {
+
 }
