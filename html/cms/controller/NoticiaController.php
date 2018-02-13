@@ -106,7 +106,7 @@ class UsuarioController {
 
         if ($id) {
             if(isset($_POST['guardar']) AND  $_POST['guardar'] == "Guardar"){
-                $usuario = filter_input(INPUT_POST, 'usuario', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+                $titulo = filter_input(INPUT_POST, 'usuario', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
                 $usuarios = (filter_input(INPUT_POST, 'usuarios', FILTER_SANITIZE_STRING)) == 'on' ? 1 : 0;
                 $noticias = (filter_input(INPUT_POST, 'noticias', FILTER_SANITIZE_STRING)) == 'on' ? 1 : 0;
                 $this->db->beginTransaction();
