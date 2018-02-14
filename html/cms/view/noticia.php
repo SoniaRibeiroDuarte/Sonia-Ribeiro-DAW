@@ -2,16 +2,27 @@
 <?php require ("partials/menu.php");?>
 <?php require ("partials/mensajes.php");?>
     <div id="contusu">
-        <h2>Editar Entrada</h2>
+        
+        <h2 id="titulous">Editar Entrada</h2>
         <form method="POST">
-            <span>Titulo</span><br>
-            <input type="text" name="titulo" value="<?php $datos->titulo?>"><br>
-            <span>Entradilla</span><br>
-            <input type="text" name="entradilla" value="<?php $datos->entradilla?>"><br>
-            <span>Texto</span><br>
-            <input type="text" name="texto" value="<?php $datos->texto?>"><br>
-            <a type="button" href="<?php echo $_SESSION['home']?>panel/noticias">Volver</a>
-            <input type="submit" value="Guardar" name="guardar">
+            <span class="titdatos">Titulo</span><br>
+            <input class="intdatos" type="text" name="titulo" value="<?php $datos->titulo?>"><br>
+            <span class="titdatos">Entradilla</span><br>
+            <input class="intdatos" type="text" name="entradilla" value="<?php $datos->entradilla?>"><br>
+            <span class="titdatos">Texto</span><br>
+            <input type="textarea"  name="editor" ><br>
+            <script>
+                CKEDITOR.replace( 'editor' );
+            </script>
+            <input type="hidden" id="texto" name="texto" value="<?php $datos->texto?>"><br>
+            <input type="submit" value="Guardar" id="guardar" name="guardar">
         </form>
     </div>
 </div>
+<script>
+       $("#guardar").click(function(){
+           var content = CKEDITOR.instances.editor.getData();
+           document.getElementById("texto").value = content;
+           document.querySelector("form").submit();
+       });
+ </script>

@@ -162,7 +162,35 @@ body{
     color: #99ff99;
 }
 /* Usuario y Entrada*/
+.titdatos{
+    margin-left: 10%;
+    font-size: 18px;
+    
+}
+.intdatos{
+    margin-left: 10%;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    display: inline-block;
+    box-sizing: content-box;
+    padding: 5px 20px;
+    border: 1px solid #000000;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    font: normal 14px/normal Arial, Helvetica, sans-serif;
+    color: rgba(0,0,0,1);
+    -o-text-overflow: clip;
+    text-overflow: clip;
+    text-shadow: 1px 1px 0 rgba(255,255,255,0.66) ;
+}
+/*Entrada*/
+.cke_chrome {
+    margin-left: 10% !important;
+    margin-right: 10% !important;
+    height: 300px !important;
+}
 
+/* Usuario*/
 /* Footer */
 #footer{
 

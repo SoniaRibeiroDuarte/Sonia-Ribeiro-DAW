@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 $(document).ready(function(){
+   
    var window_width = $(window).width();
    if(window_width>=650) {
     var window_height = $( window ).height();
@@ -14,5 +15,8 @@ $(document).ready(function(){
     console.log("Nuevo alto"+new_height);
     $('#conlog').css("height",new_height+"px");   
    }
+   
+   
 });
+
 

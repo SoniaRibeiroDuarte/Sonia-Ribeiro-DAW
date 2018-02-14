@@ -141,7 +141,8 @@ class NoticiaController {
             if(isset($_POST['guardar']) AND  $_POST['guardar'] == "Guardar"){
                 $titulo = filter_input(INPUT_POST, 'titulo', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
                 $entradilla = filter_input(INPUT_POST, 'entradilla', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-                $texto = filter_input(INPUT_POST, 'texto', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+                $texto = filter_input(INPUT_POST, 'texto');
+                
                 $this->db->beginTransaction();
                 
                 $this->db->exec("UPDATE noticias SET titulo='".$titulo."' WHERE id='".$id."'");
