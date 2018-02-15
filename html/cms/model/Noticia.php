@@ -14,6 +14,7 @@ class Noticia {
     var $slug;
     var $fecha_pub;
     var $home;
+    var $imagen;
     //constructor
     function __construct($data){
         $this->id = $data->id;
@@ -28,5 +29,6 @@ class Noticia {
         $this->slug = $data->slug;
         $this->fecha_pub = $data->fecha_pub;
         $this->home = $data->home;
+        $this->imagen = $data->imagen;
     }
 }

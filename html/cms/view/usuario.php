@@ -15,7 +15,7 @@
             <?php $noticias = ($datos->noticias == 1) ? 'checked':''?>
             <input class="intdatos" type="checkbox" name="noticias" <?php $noticias?>>Noticias<br>
             <input class="intdatos" type="checkbox" name="usuarios" <?php $usuario?>>Usuarios<br>
-            <input type="submit" value="Guardar" name="guardar">
+            <input type="submit" value="Guardar" name="guardar" class="guardar">
         </form>
     </div>
 </div>

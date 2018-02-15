@@ -142,12 +142,21 @@ class NoticiaController {
                 $titulo = filter_input(INPUT_POST, 'titulo', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
                 $entradilla = filter_input(INPUT_POST, 'entradilla', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
                 $texto = filter_input(INPUT_POST, 'texto');
-                
+                $ruta = "../public/img/noticias/";
+                $imagen = $_FILES['imagen'];
+                $archivo_subido = $ruta . basename($imagen['name']);
+                if (is_uploaded_file($imagen['tmp_name']) AND move_uploaded_file($imagen['tmp_name'], $archivo_subido)) {
+                        echo "El fichero es válido y se subió con éxito.\n";
+                } else {
+                        echo "¡Posible ataque de subida de ficheros!\n";
+                }
+               
                 $this->db->beginTransaction();
                 
                 $this->db->exec("UPDATE noticias SET titulo='".$titulo."' WHERE id='".$id."'");
                 $this->db->exec("UPDATE noticias SET entradilla='".$entradilla."' WHERE id='".$id."'");
                 $this->db->exec("UPDATE noticias SET texto='".$texto."' WHERE id='".$id."'");
+                $this->db->exec("UPDATE noticias SET imagen='".$ruta.$imagen."' WHERE id='".$id."'");
                 
                 $this->db->commit();
                 

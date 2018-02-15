@@ -194,10 +194,14 @@ class UsuarioController {
         if ($id) {
             if(isset($_POST['guardar']) AND  $_POST['guardar'] == "Guardar"){
                 $usuario = filter_input(INPUT_POST, 'usuario', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+                $clave = filter_input(INPUT_POST, 'clave', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
                 $usuarios = (filter_input(INPUT_POST, 'usuarios', FILTER_SANITIZE_STRING)) == 'on' ? 1 : 0;
                 $noticias = (filter_input(INPUT_POST, 'noticias', FILTER_SANITIZE_STRING)) == 'on' ? 1 : 0;
                 $this->db->beginTransaction();
                 $this->db->exec("UPDATE usuarios SET usuario='".$usuario."' WHERE id='".$id."'");
+                if(isset($_POST['cambiarclave'])){
+                    $this->db->exec("UPDATE usuarios SET clave='".$clave."' WHERE id='".$id."'");
+                }
                 $this->db->exec("UPDATE usuarios SET usuarios='".$usuarios."' WHERE id='".$id."'");
                 $this->db->exec("UPDATE usuarios SET noticias='".$noticias."' WHERE id='".$id."'");
                 $this->db->commit();

@@ -4,7 +4,7 @@
     <div id="contusu">
         
         <h2 id="titulous">Editar Entrada</h2>
-        <form method="POST">
+        <form enctype="multipart/form-data" method="POST">
             <span class="titdatos">Titulo</span><br>
             <input class="intdatos" type="text" name="titulo" value="<?php $datos->titulo?>"><br>
             <span class="titdatos">Entradilla</span><br>
@@ -15,7 +15,9 @@
                 CKEDITOR.replace( 'editor' );
             </script>
             <input type="hidden" id="texto" name="texto" value="<?php $datos->texto?>"><br>
-            <input type="submit" value="Guardar" id="guardar" name="guardar">
+            <span class="titdatos">Imagen</span><br>
+            <input name="imagen" type="file"><br>
+            <input type="submit" value="Guardar" class="guardar" name="guardar">
         </form>
     </div>
 </div>

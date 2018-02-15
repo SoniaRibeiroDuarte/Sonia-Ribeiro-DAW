@@ -13,7 +13,7 @@ $(document).ready(function(){
     console.log("Alto menu:"+$('#menu').height());
     console.log("Alto footer:"+$('#footer').height());
     console.log("Nuevo alto"+new_height);
-    $('#conlog').css("height",new_height+"px");   
+    $('#conlog').css("min-height",new_height+"px");   
    }
    
    
