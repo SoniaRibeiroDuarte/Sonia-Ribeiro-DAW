@@ -28,3 +28,4 @@
            document.querySelector("form").submit();
        });
  </script>
+ <?php require("partials/footer.php") ?>

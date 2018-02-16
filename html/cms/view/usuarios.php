@@ -32,5 +32,5 @@
             <?php } ?>
     </div>
 </div>
-   
+<?php require("partials/footer.php") ?>  
 

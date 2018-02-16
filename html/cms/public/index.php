@@ -3,6 +3,7 @@ namespace App;
 session_start();
 use App\Controller\UsuarioController;
 use App\Controller\NoticiaController;
+use App\Controller\AppController;
 //ruta de la publica
 $public ='/cms/public/';
 //llamo a la cabecera
@@ -191,5 +192,3 @@ if (count($array_ruta) == 4){
 }
 
 
-//llamo al pie
-require ("../view/partials/footer.php");

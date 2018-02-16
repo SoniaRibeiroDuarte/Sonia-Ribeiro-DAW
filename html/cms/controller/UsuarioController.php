@@ -35,7 +35,7 @@ class UsuarioController {
             if($usuario AND $clave){
                 //compruebo que el usuario existe
                 if($this->comprueba_usuario($usuario,$clave)){
-                    $datos->usuario = $_SESSION['usuario'];
+                   $datos->usuario = $_SESSION['usuario'];
                     $vista = "panel";
                 }else{
                     $datos->mensaje = "<span class='rojo'>Usuario o clave incorrecto</span>";
@@ -49,13 +49,14 @@ class UsuarioController {
     function comprueba_usuario($usuario,$clave){
         
         //Select con OBJ
-        $resultado = $this->db->query("SELECT * FROM usuarios where usuario='".$usuario."'");
+        $resultado = $this->db->query("SELECT * FROM usuarios where usuario='".$usuario."'AND activo=1");
         //asigno la consulta a una variable
         $data = $resultado->fetch(\PDO::FETCH_OBJ);
         //compruebo la contraseña
         if($data AND hash_equals($data->clave, crypt($clave, $data->clave))){
             //añado el nombre de usuario a la sesion
             $_SESSION['usuario'] = $data ->usuario;
+            $_SESSION['usuarios'] = $data ->usuarios;
             return 1;
         }else{
             return 0;
@@ -64,6 +65,8 @@ class UsuarioController {
         return($data) ? 1 : 0;
     }
     public function index() {
+        //compruebo permisos
+        $this->permisos();
         //Select con OBJ
         $resultado = $this->db->query("SELECT * FROM usuarios");
         //Asigno la consulta a una variable
@@ -200,7 +203,7 @@ class UsuarioController {
                 $this->db->beginTransaction();
                 $this->db->exec("UPDATE usuarios SET usuario='".$usuario."' WHERE id='".$id."'");
                 if(isset($_POST['cambiarclave'])){
-                    $this->db->exec("UPDATE usuarios SET clave='".$clave."' WHERE id='".$id."'");
+                    $this->db->exec("UPDATE usuarios SET clave='".crypt($clave)."' WHERE id='".$id."'");
                 }
                 $this->db->exec("UPDATE usuarios SET usuarios='".$usuarios."' WHERE id='".$id."'");
                 $this->db->exec("UPDATE usuarios SET noticias='".$noticias."' WHERE id='".$id."'");
@@ -228,6 +231,16 @@ class UsuarioController {
             $_SESSION['mensajes'] = $mensaje;
             header("location: " . $_SESSION['home'] . "panel/usuarios");
         }
+    }
+    function permisos(){
+        if(!isset($_SESSION['usuarios']) || $_SESSION['usuarios'] != 1 ){
+            $mensaje[] = ['tipo' => 'danger',
+                        'texto' => 'Usuario no autorizado'];
+            $_SESSION['mensajes'] = $mensaje;
+            //redirijo al panel
+            header("location: " . $_SESSION['home'] . "panel/usuarios");
+        }
+
     }
 
 }

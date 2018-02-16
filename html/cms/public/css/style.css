@@ -3,11 +3,10 @@ body{
     margin: 0px;
     padding: 0px;
     font-family: helvetica;
-    background-image: url("../img/fondo.jpg");
 }
 /*comunes*/
 #conlog{
-   
+   background-image: url("../img/fondo.jpg");
 }
 /* Login */
 #contLog{
@@ -207,13 +206,28 @@ body{
 }
 
 /* Usuario*/
+/* Home */
+#contenedor_home{
+
+}
+#banner{
+
+}
+#logo_home{
+    width: 25%;
+    margin-left:37%;
+}
+#campo_buscar{
+    
+    margin-left:40%;
+}
 /* Footer */
 #footer{
 
     background: linear-gradient(to bottom, rgba(229,229,229,0) 0%,rgba(229,229,229,0.2) 5%,rgba(224,213,224,0.52) 13%,rgba(224,213,224,1) 25%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00fffffe', endColorstr='#fffffe',GradientType=0 ); /* IE6-9 */
     height: 92px;
-    margin-top: -30px;
+    margin-top: -90px;
 }
 #logopie{
     width:120px;

@@ -8,11 +8,7 @@ $(document).ready(function(){
    var window_width = $(window).width();
    if(window_width>=650) {
     var window_height = $( window ).height();
-    var new_height = window_height - 60;
-    console.log("Alto window:"+window_height);
-    console.log("Alto menu:"+$('#menu').height());
-    console.log("Alto footer:"+$('#footer').height());
-    console.log("Nuevo alto"+new_height);
+    var new_height = window_height;
     $('#conlog').css("min-height",new_height+"px");   
    }
    
