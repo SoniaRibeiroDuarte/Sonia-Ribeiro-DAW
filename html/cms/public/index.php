@@ -11,13 +11,10 @@ require ("../view/partials/header.php");
 
 //ruta de la home
 $home ='/cms/public/index.php/';
-
 //la guardo a la sesion
 $_SESSION['home']=$home;
-
 //defino la funcion que que autocargara las clases cuando se instacien
 spl_autoload_register('App\autoload');
-
 function autoload ($clase, $dir=null){
     
     //plantear ruta absoluta del proyecto(directorio raiz de mi proyecto)
@@ -37,19 +34,14 @@ function autoload ($clase, $dir=null){
         }
     }
 }
-
 //compruebo la ruta que me esta pidiendo
 $home = '/cms/public/index.php/';
-
 //la guardo a la sesión
 $_SESSION['home'] = $home;
-
 $ruta = str_replace($home, '',$_SERVER["REQUEST_URI"]);
-
 //enrutamientos
 /*
 $array_ruta = explode('/',$ruta);
-
 switch (count($array_ruta)){
     case 1: ruta1($array_ruta);
         break;
@@ -63,7 +55,6 @@ switch (count($array_ruta)){
         break;
     default: echo "pagina incorrecta";
 }
-
 function ruta1($array_ruta){
     switch ($array_ruta[0]){
         case "":        return  "";
@@ -74,16 +65,11 @@ function ruta1($array_ruta){
 }
 //saco la accion
 function ruta2($array_ruta){
-
     $controlador = ruta1($array_ruta);
-
     switch ($controlador){
-
         case "UsuarioController": return $array_ruta[1];
         case "NoticiaController": return
-
     }
-
     switch ($array_ruta[1]){
         case "":        return  "";
         case "panel":   return "UsuarioController"
@@ -92,7 +78,6 @@ function ruta2($array_ruta){
     }
 }
 */
-
 $array_ruta = explode("/",$ruta);
 
 if (count($array_ruta) == 4){
@@ -117,6 +102,8 @@ if (count($array_ruta) == 4){
     }else if ($array_ruta[0].$array_ruta[1] == "panelnoticias"){
         if ($array_ruta[2] == "editar" OR
             $array_ruta[2] == "borrar" OR
+            $array_ruta[2] == "desactivarhome" OR
+            $array_ruta[2] == "activarhome" OR
             $array_ruta[2] == "desactivar" OR
             $array_ruta[2] == "activar"){
             $controller = new NoticiaController;

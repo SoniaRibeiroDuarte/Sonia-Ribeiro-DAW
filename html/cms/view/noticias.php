@@ -21,6 +21,12 @@
                     <li id="acciones">
                         <?php $ruta = $_SESSION['home']."panel/noticias/editar/".$dato->id ?>
                         <a class="acciones2" href="<?php echo $ruta ?>"><i class="far fa-edit"></i></a>
+                        <?php if ($_SESSION['usuarios']){?>
+                            <?php $color = ($dato->home == 1) ? 'activo':'inactivo';?>
+                            <?php $texto = ($dato->home == 1) ? 'desactivar_home':'activar_home';?>
+                            <?php $ruta = $_SESSION['home']."panel/noticias/".$texto."/".$dato->id;?>
+                            <a id="<?php echo $color?>" class="acciones2"  href="<?php echo $ruta ?>" title="<?php echo $texto?>"><i class="fas fa-home"></i></a>
+                         <?php } ?>
                         <?php $color = ($dato->activo == 1) ? 'activo':'inactivo';?>
                         <?php $texto = ($dato->activo == 1) ? 'desactivar':'activar';?>
                         <?php $ruta = $_SESSION['home']."panel/noticias/".$texto."/".$dato->id;?>

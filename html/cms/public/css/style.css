@@ -211,7 +211,10 @@ body{
 
 }
 #banner{
-
+    padding-top: 20px;
+    background-image: url("../img/banner2.png");
+    background-size: cover;
+    padding-bottom: 100px;
 }
 #logo_home{
     width: 25%;
@@ -219,7 +222,64 @@ body{
 }
 #campo_buscar{
     
-    margin-left:40%;
+    margin-left:37.5%;
+    display: inline-block;
+    box-sizing: content-box;
+    padding: 5px 20px;
+    border: 1px solid #000000;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    font: normal 14px/normal Arial, Helvetica, sans-serif;
+    color: rgba(0,0,0,1);
+    -o-text-overflow: clip;
+    text-overflow: clip;
+    text-shadow: 1px 1px 0 rgba(255,255,255,0.66) ;
+}
+#buscar{
+  border: 0px;
+  border-radius: 4px;
+  color: #ffffff;
+  font-size: 16px;
+  background: #050505;
+  padding: 5px 20px 5px 20px;
+  text-decoration: none;
+}
+
+#buscar:hover {
+  background: #ffffff;
+  text-decoration: none;
+  color: black;
+}   
+
+#noticias{
+    background-color: white;
+    margin-top: -50px;
+    margin-left: 4%;
+    margin-right: 4%;
+    height: 900px;
+    width: 88%;
+    padding-right: 2%;
+    padding-left: 2%;
+    padding-top: 1%
+    
+}
+.noticia{
+    float:left;
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    background-color: black;
+    margin-left: 2.5%;
+    margin-top: 4%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    
+}
+.noticia_enlace{
+    text-decoration: none;
+    color: whitesmoke;
 }
 /* Footer */
 #footer{

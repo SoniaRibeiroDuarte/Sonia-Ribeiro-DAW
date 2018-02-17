@@ -1,10 +1,8 @@
 <?php
 namespace App\Controller;
-
 use App\Model\Usuario;
 use App\Helper\ViewHelper;
 use App\Helper\DbHelper;
-
 class UsuarioController {
     
     var $db;
@@ -108,17 +106,12 @@ class UsuarioController {
         
     }
     function activar($id){
-
         if ($id) {
             $registros = $this->db->exec("UPDATE usuarios SET activo=1 WHERE id=" . $id . "");
-
             if ($registros) {
-
                 $mensaje[] = ['tipo' => 'success',
                     'texto' => 'El usuario se ha activado correctamente.',
                 ];
-
-
             } else {
                 $mensaje[] = ['tipo' => 'danger',
                     'texto' => 'Ha ocurrido un error al activar usuario.',
@@ -132,21 +125,14 @@ class UsuarioController {
         $_SESSION['mensajes'] = $mensaje;
         //Le redirijo al panel
         header("location: ".$_SESSION['home']."panel/usuarios");
-
-
     }
     function desactivar($id){
-
         if ($id) {
             $registros = $this->db->exec("UPDATE usuarios SET activo=0 WHERE id=" . $id . "");
-
             if ($registros) {
-
                 $mensaje[] = ['tipo' => 'success',
                     'texto' => 'El usuario se ha desactivado correctamente.',
                 ];
-
-
             } else {
                 $mensaje[] = ['tipo' => 'danger',
                     'texto' => 'Ha ocurrido un error al desactivar usuario.',
@@ -160,21 +146,14 @@ class UsuarioController {
         $_SESSION['mensajes'] = $mensaje;
         //Le redirijo al panel
         header("location: ".$_SESSION['home']."panel/usuarios");
-
-
     }
     function borrar($id){
-
         if ($id) {
             $registros = $this->db->exec("DELETE FROM usuarios WHERE id=" . $id . " ");
-
             if ($registros) {
-
                 $mensaje[] = ['tipo' => 'success',
                     'texto' => 'El usuario se ha borrado correctamente.',
                 ];
-
-
             } else {
                 $mensaje[] = ['tipo' => 'danger',
                     'texto' => 'Ha ocurrido un error al borrar el usuario.',
@@ -188,12 +167,9 @@ class UsuarioController {
         $_SESSION['mensajes'] = $mensaje;
         //Le redirijo al panel
         header("location: ".$_SESSION['home']."panel/usuarios");
-
-
     }
     
     function editar($id) {
-
         if ($id) {
             if(isset($_POST['guardar']) AND  $_POST['guardar'] == "Guardar"){
                 $usuario = filter_input(INPUT_POST, 'usuario', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
@@ -240,7 +216,5 @@ class UsuarioController {
             //redirijo al panel
             header("location: " . $_SESSION['home'] . "panel/usuarios");
         }
-
     }
-
 }

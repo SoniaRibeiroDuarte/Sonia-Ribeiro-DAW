@@ -7,9 +7,9 @@
     <div id="cuerpo_noticias">
         <div id="noticias">
             <?php foreach ($datos as $dato){ ?>
-            <div class="noticia">
-                <a class="noticia_enlace" href=""><?php echo $dato->titulo ?></a>
-            </div>
+            
+                <a class="noticia_enlace" href=""><div class="noticia"><?php echo $dato->titulo ?></div></a>
+            
             <?php }?>   
         </div>
     </div>
