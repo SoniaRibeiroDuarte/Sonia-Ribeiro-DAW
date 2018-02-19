@@ -3,83 +3,80 @@ body{
     margin: 0px;
     padding: 0px;
     font-family: helvetica;
+    background-color: #FDEECD;
 }
-/*comunes*/
-#conlog{
-   background-image: url("../img/fondo.jpg");
-   background-size: cover;
-   height: 100%;
-}
+
 /* Login */
 #contLog{
-    border: solid black 1px;
-    border-radius: 10px;
-    width: 50%;
-    padding-bottom: 60px;
+   
+    width: 75%;
+    padding-bottom: 80px;
     padding-top: 20px;
-    background: #fffffe;
-    opacity: 0.90;
     margin-left: auto;
     margin-right: auto;
-    top: 60px;
+    margin-top: 100px;
     position: relative;
+    background-color: #FDEECD;
+    opacity: 0.9;
 }
 #logoacc{
-    width:50%;
-    margin-left:25%;
+    width:40%;
+    margin-left:32%;
+    margin-bottom: 20px;
 }
 #meslo{
-    margin-left:34%;
+    margin-left:40%;
     font-size: 14px;
+    color: whitesmoke;
 }
 .rojo{
     color: #F78181;
     margin-left:3%;
 }
 .datosus{
-    margin-left: 32%;
+    margin-left: 30%;
     
 }
 .intus{
-    margin-left: 32%;
+    margin-left:30%;
+    width: 40%;
     display: inline-block;
     box-sizing: content-box;
-    padding: 5px 20px;
-    border: 1px solid #000000;
-    -webkit-border-radius: 3px;
-    border-radius: 3px;
-    font: normal 14px/normal Arial, Helvetica, sans-serif;
-    color: rgba(0,0,0,1);
-    -o-text-overflow: clip;
-    text-overflow: clip;
-    text-shadow: 1px 1px 0 rgba(255,255,255,0.66) ;
+    padding: 7px 20px;
+    border: 1px solid #FDEECD;
+    background-color: #FDEECD;
+    font: normal 16px/normal Arial, Helvetica, sans-serif;
+    color: rgba(0,0,0,1)
 }
 #buttonlog{
+  width: 44.5%;
   border: 0px;
-  border-radius: 4px;
-  font-family: Arial;
   color: #ffffff;
-  font-size: 13px;
-  background: #575757;
-  padding: 11px 20px 10px 20px;
+  font-size: 16px;
+  background: #151515;
+  padding: 10px 20px;
   text-decoration: none;
-  margin-left: 42%;
-  margin-top: 30px;
+  margin-left: 30%;
+  margin-top: 20px;
+  font-family: Montserrat,sans-serif;
+  letter-spacing: .0625em;
 }
 #buttonlog:hover{
-  background: #E5D2E5;
-  text-decoration: none;
+    background: #D24858;
+    text-decoration: none;
 }
 /* Menu */
 #menu{
-    height: 80px;
-    background-color: #fffffe;
+    height: 90px;
+    background-color: #493831;
     
 }
 #logomenu{
    float: left;
    margin-left: 2%; 
    width: 150px;
+   margin-top: 5px;
+   margin-bottom: 5px;
 }
 #navmenu{
     float: right;
@@ -95,10 +92,10 @@ body{
 
 .amenu{
     text-decoration: none;
-    color: black;
+    color: whitesmoke;
 }
 .limenu{
-    border-bottom: solid 2px #ffffff;
+    border-bottom: solid 2px #493831;
     float: left;
     text-align: center;
     padding: 02px 10px;
@@ -108,7 +105,7 @@ body{
     font-size: 20px;
 }
 .limenu:hover{
-    border-bottom: solid 2px #E5D2E5;
+    border-bottom: solid 2px #D24858;
 }
 /* Usuarios y Entradas*/
 hr{
@@ -120,7 +117,7 @@ hr{
     margin-bottom: 80px;
     padding-bottom: 60px;
     padding-top: 20px;
-    background: #fffffe;
+    background: #FDEECD;
     opacity: 0.90;
     position: relative;    
 }
@@ -154,17 +151,20 @@ hr{
     margin-left: 4px;
     color:black;
 }
+.acciones2:hover{
+    color: #D24858;
+}
 #activo{
-    color: #99ff99;
+    color: #DFFF5E;
 }
 #activo :hover{
-    color: #ff6666;
+    color: #FF5C5C;
 }
 #inactivo{
-    color: #ff6666;
+    color: #FF5C5C;
 }
 #inactivo :hover{
-    color: #99ff99;
+    color: #DFFF5E;
 }
 /* Usuario y Entrada*/
 .titdatos{
@@ -217,49 +217,50 @@ hr{
 
 }
 #banner{
-    padding-top: 20px;
+    padding-top: 40px;
     background-image: url("../img/banner2.png");
     background-size: cover;
-    padding-bottom: 100px;
+    padding-bottom: 120px;
 }
 #logo_home{
     width: 25%;
     margin-left:37%;
+    margin-bottom: 20px;
 }
 #campo_buscar{
     
-    margin-left:37.5%;
+    margin-left:33.5%;
+    width: 20%;
     display: inline-block;
     box-sizing: content-box;
-    padding: 5px 20px;
-    border: 1px solid #000000;
-    -webkit-border-radius: 3px;
-    border-radius: 3px;
-    font: normal 14px/normal Arial, Helvetica, sans-serif;
+    padding: 7px 20px;
+    border: 1px solid #FDEECD;
+    background-color: #FDEECD;
+    font: normal 16px/normal Arial, Helvetica, sans-serif;
     color: rgba(0,0,0,1);
-    -o-text-overflow: clip;
-    text-overflow: clip;
-    text-shadow: 1px 1px 0 rgba(255,255,255,0.66) ;
 }
 #buscar{
   border: 0px;
-  border-radius: 4px;
   color: #ffffff;
-  font-size: 16px;
-  background: #050505;
-  padding: 5px 20px 5px 20px;
+  font-size: 14px;
+  background: #151515;
+  padding: 9px 20px;
   text-decoration: none;
+  margin-left: -5px;
+  font-family: Montserrat,sans-serif;
+  letter-spacing: .0625em;
 }
 
 #buscar:hover {
-  background: #ffffff;
+  background: #D24858;
   text-decoration: none;
-  color: black;
 }   
-
+#cuerpo_noticias{
+    
+}
 #noticias{
-    background-color: white;
-    margin-top: -50px;
+    background-color: #FDEECD;
+    margin-top: -70px;
     margin-left: 4%;
     margin-right: 4%;
     height: 900px;
@@ -271,17 +272,25 @@ hr{
 }
 .noticia{
     float:left;
-    width: 200px;
-    height: 200px;
-    text-align: center;
-    background-color: black;
+    width: 220px;
+    height: 185px;
+    padding-right: 20px;
+    padding-bottom: 15px;
+    text-align: right;
+    background-color: #151515;
     margin-left: 2.5%;
     margin-top: 4%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-content: center;
     flex-direction: column;
+    font-family: Montserrat,sans-serif;
+    text-transform: uppercase;
+    letter-spacing: .0625em;
     
+}
+.noticia:hover{
+    background-color: #D24858;
 }
 .noticia_enlace{
     text-decoration: none;
@@ -289,23 +298,20 @@ hr{
 }
 /* Footer */
 #footer{
-
-    background: linear-gradient(to bottom, rgba(229,229,229,0) 0%,rgba(229,229,229,0.2) 5%,rgba(224,213,224,0.52) 13%,rgba(224,213,224,1) 25%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00fffffe', endColorstr='#fffffe',GradientType=0 ); /* IE6-9 */
-    height: 92px;
-    margin-top: -30px;
+    background: #FDEECD;
+    height: 85px;
 }
 #logopie{
     width:120px;
     margin-left: 20px;
-    margin-top: 24px;
+    margin-top: 10px;
     float: left;
 }
 #nombre{
     width:120px;
     float: right;
     margin-right: 20px;
-    margin-top: 28px;
+    margin-top: 18px;
 }
 @media only screen and (max-width: 768px) {
 

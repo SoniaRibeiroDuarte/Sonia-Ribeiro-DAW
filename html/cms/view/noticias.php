@@ -1,16 +1,9 @@
-<div id="conlog">
+<?php require("partials/header.php") ?>
 <?php require("partials/menu.php") ?>
 <?php require("partials/mensajes.php") ?>
     <div id="contusu">
-        <h2 id="titulous">Entradas</h2>
-            <ul id="titulosus">
-                <li id="titizq">Entradas
-                    <a class="acciones2" class="añadir"  href="<?php echo $_SESSION['home'] ?>panel/noticias/crear">
-                        <i class="fas fa-plus"></i>
-                    </a>
-                </li>
-                <li id="titdrch">Acciones</li>
-            </ul>    
+        <h2 id="titulous">Entradas <a class="acciones2" class="añadir"  href="<?php echo $_SESSION['home'] ?>panel/noticias/crear"><i class="fas fa-plus"></i></h2>
+   
             <?php foreach ($datos as $dato){ ?>
                 <ul id="titulosus">
                     <li id="titizq">
@@ -38,6 +31,5 @@
               <hr>  
             <?php } ?>
     </div>
-</div>
 <?php require("partials/footer.php") ?>
    

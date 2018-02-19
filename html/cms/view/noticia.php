@@ -1,4 +1,4 @@
-<div id="conlog">
+<?php require("partials/header.php") ?>
 <?php require ("partials/menu.php");?>
 <?php require ("partials/mensajes.php");?>
     <div id="contusu">
@@ -20,7 +20,6 @@
             <input type="submit" value="Guardar" class="guardar" name="guardar">
         </form>
     </div>
-</div>
 <script>
        $("#guardar").click(function(){
            var content = CKEDITOR.instances.editor.getData();

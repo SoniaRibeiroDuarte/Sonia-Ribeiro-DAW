@@ -1,3 +1,4 @@
+ <?php require("partials/header_home.php") ?>
 <div id="contenedor_home">
     <div id="banner">
         <img id ="logo_home" src="<?php echo'/cms/public/img/logo2.png'?>"><br>

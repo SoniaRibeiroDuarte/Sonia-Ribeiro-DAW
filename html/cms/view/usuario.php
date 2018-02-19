@@ -1,4 +1,4 @@
-<div id="conlog">
+<?php require("partials/header.php") ?>
 <?php require ("partials/menu.php");?>
 <?php require ("partials/mensajes.php");?>
     <div id="contusu">
@@ -18,5 +18,5 @@
             <input type="submit" value="Guardar" name="guardar" class="guardar">
         </form>
     </div>
-</div>
+
 <?php require("partials/footer.php") ?>

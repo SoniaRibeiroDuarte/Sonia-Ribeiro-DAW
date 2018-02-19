@@ -6,8 +6,7 @@ use App\Controller\NoticiaController;
 use App\Controller\AppController;
 //ruta de la publica
 $public ='/cms/public/';
-//llamo a la cabecera
-require ("../view/partials/header.php");
+
 
 //ruta de la home
 $home ='/cms/public/index.php/';
