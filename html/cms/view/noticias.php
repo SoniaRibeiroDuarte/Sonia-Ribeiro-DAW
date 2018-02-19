@@ -23,7 +23,7 @@
                         <a class="acciones2" href="<?php echo $ruta ?>"><i class="far fa-edit"></i></a>
                         <?php if ($_SESSION['usuarios']){?>
                             <?php $color = ($dato->home == 1) ? 'activo':'inactivo';?>
-                            <?php $texto = ($dato->home == 1) ? 'desactivar_home':'activar_home';?>
+                            <?php $texto = ($dato->home == 1) ? 'desactivarhome':'activarhome';?>
                             <?php $ruta = $_SESSION['home']."panel/noticias/".$texto."/".$dato->id;?>
                             <a id="<?php echo $color?>" class="acciones2"  href="<?php echo $ruta ?>" title="<?php echo $texto?>"><i class="fas fa-home"></i></a>
                          <?php } ?>
@@ -34,7 +34,8 @@
                          <?php $ruta = $_SESSION['home']."panel/noticias/borrar"."/".$dato->id ?>
                         <a class="acciones2" href="<?php echo $ruta ?>" title="borrar"><i class="far fa-trash-alt"></i></a>
                     </li>
-                </ul>    
+                </ul>
+              <hr>  
             <?php } ?>
     </div>
 </div>

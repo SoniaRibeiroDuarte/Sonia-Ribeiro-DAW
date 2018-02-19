@@ -168,7 +168,7 @@ class NoticiaController {
                 # Rellenamos espacios con guiones
                 $slug = preg_replace('/\s+/', ' ', $slug);
                 $slug = preg_replace('/\s+/', '-', $slug);
-  
+         
                 
                 $ruta = "../public/img/noticias/";
                 $imagen = $_FILES['imagen'];

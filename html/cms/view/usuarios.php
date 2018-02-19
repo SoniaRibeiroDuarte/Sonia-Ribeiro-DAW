@@ -28,11 +28,10 @@
                          <?php $ruta = $_SESSION['home']."panel/usuarios/borrar"."/".$dato->id ?>
                         <a class="acciones2" href="<?php echo $ruta ?>" title="borrar"><i class="far fa-trash-alt"></i></a>
                     </li>
-                </ul>    
+                </ul>
+                <hr>
             <?php } ?>
     </div>
-</div>
-<?php require("partials/footer.php") ?>
 </div>
 <?php require("partials/footer.php") ?>  
 
