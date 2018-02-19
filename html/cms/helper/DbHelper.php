@@ -1,18 +1,20 @@
 <?php
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 namespace App\Helper;
-
-/**
- * Description of Dbhelper
- *
- * @author web
- */
-class Dbhelper {
-    //put your code here
+class DbHelper {
+    
+    var $db;
+    
+    function __construct(){
+        
+        //Conexión mediante PDO
+        $opciones = [\PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"];
+        try {
+            $this->db = new \PDO('mysql:host=localhost;dbname=cms', 'root', 'Okonomiyaki1', $opciones);
+            $this->db->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+        } catch (\PDOException $e) {
+            echo 'Falló la conexión: ' . $e->getMessage();
+        }
+        
+    }
+    
 }
