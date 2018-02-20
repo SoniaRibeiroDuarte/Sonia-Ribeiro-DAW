@@ -53,7 +53,7 @@ body{
   border: 0px;
   color: #ffffff;
   font-size: 16px;
-  background: #151515;
+  background: #493831;
   padding: 10px 20px;
   text-decoration: none;
   margin-left: 30%;
@@ -92,7 +92,7 @@ body{
 
 .amenu{
     text-decoration: none;
-    color: whitesmoke;
+    color: #FDEECD;
 }
 .limenu{
     border-bottom: solid 2px #493831;
@@ -110,7 +110,7 @@ body{
 /* Usuarios y Entradas*/
 hr{
     width: 85%;
-    border: 0.5px solid #666666; 
+    border: 0.5px solid #EAB05E; 
 }
 #contusu{
     margin-top: 50px;
@@ -123,19 +123,21 @@ hr{
 }
 #titulous{
     margin-left: 10%;
+    color: #493831;
 }
 #titulosus{
     height: 20px;
     list-style: none;
     margin-left: 10%;
     padding: 0px;
+    color: #493831;
 }
 #titizq{
     float: left;
 
 }
 #negro{
-    color:black;
+    color: #493831;
     text-decoration: none;    
 }
 #titdrch{
@@ -149,66 +151,59 @@ hr{
 }
 .acciones2{
     margin-left: 4px;
-    color:black;
+    color: #493831;
 }
 .acciones2:hover{
     color: #D24858;
 }
 #activo{
-    color: #DFFF5E;
+    color: #7ABF66;
 }
 #activo :hover{
-    color: #FF5C5C;
+    color: #DB3026;
 }
 #inactivo{
-    color: #FF5C5C;
+    color: #DB3026;
 }
 #inactivo :hover{
-    color: #DFFF5E;
+    color: #7ABF66;
 }
 /* Usuario y Entrada*/
 .titdatos{
     margin-left: 10%;
     font-size: 18px;
-    
 }
 .intdatos{
     margin-left: 10%;
-    margin-bottom: 10px;
     margin-top: 10px;
+    margin-bottom: 20px;
     display: inline-block;
     box-sizing: content-box;
-    padding: 5px 20px;
-    border: 1px solid #000000;
-    -webkit-border-radius: 3px;
-    border-radius: 3px;
-    font: normal 14px/normal Arial, Helvetica, sans-serif;
-    color: rgba(0,0,0,1);
-    -o-text-overflow: clip;
-    text-overflow: clip;
-    text-shadow: 1px 1px 0 rgba(255,255,255,0.66) ;
+    padding: 7px 20px;
+    border: 1px solid #FDEECD;
+    font: normal 16px/normal Arial, Helvetica, sans-serif;
+    color: rgba(0,0,0,1)
 }
 .guardar{
   border: 0px;
-  border-radius: 4px;
-  font-family: Arial;
   color: #ffffff;
-  font-size: 13px;
-  background: #575757;
-  padding: 11px 20px 10px 20px;
+  font-size: 16px;
+  background: #493831;
+  padding: 10px 20px;
   text-decoration: none;
-  margin-top: 30px;
   margin-left: 10%;
+  margin-top: 20px;
+  font-family: Montserrat,sans-serif;
+  letter-spacing: .0625em;
 }
-.guardar :hover{
-  background: #E5D2E5;
-  text-decoration: none; 
+.guardar:hover{
+    background: #D24858;
+    text-decoration: none; 
 }
 /*Entrada*/
 .cke_chrome {
     margin-left: 10% !important;
     margin-right: 10% !important;
-    height: 300px !important;
 }
 
 /* Usuario*/
@@ -243,7 +238,7 @@ hr{
   border: 0px;
   color: #ffffff;
   font-size: 14px;
-  background: #151515;
+  background: #493831;
   padding: 9px 20px;
   text-decoration: none;
   margin-left: -5px;
@@ -263,11 +258,12 @@ hr{
     margin-top: -70px;
     margin-left: 4%;
     margin-right: 4%;
-    height: 900px;
+    overflow: auto;
     width: 88%;
     padding-right: 2%;
     padding-left: 2%;
-    padding-top: 1%
+    padding-top: 1%;
+    padding-bottom: 5%;
     
 }
 .noticia{
@@ -277,7 +273,7 @@ hr{
     padding-right: 20px;
     padding-bottom: 15px;
     text-align: right;
-    background-color: #151515;
+    background-color: #493831;
     margin-left: 2.5%;
     margin-top: 4%;
     display: flex;
@@ -285,7 +281,7 @@ hr{
     align-content: center;
     flex-direction: column;
     font-family: Montserrat,sans-serif;
-    text-transform: uppercase;
+    font-size: 20px;
     letter-spacing: .0625em;
     
 }
@@ -298,7 +294,11 @@ hr{
 }
 /* Footer */
 #footer{
-    background: #FDEECD;
+    background: #493831;
+    height: 85px;
+}
+#footer_home{
+    background: #EA8676;
     height: 85px;
 }
 #logopie{

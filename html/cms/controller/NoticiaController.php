@@ -168,9 +168,9 @@ class NoticiaController {
                 # Rellenamos espacios con guiones
                 $slug = preg_replace('/\s+/', ' ', $slug);
                 $slug = preg_replace('/\s+/', '-', $slug);
-         
+                $slug = $slug.$id;
                 
-                $ruta = "../public/img/noticias/";
+                $ruta = "http://18.195.115.15/cms/public/img/noticias/";
                 $imagen = $_FILES['imagen'];
                 $archivo_subido = $ruta . basename($imagen['name']);
                 if (is_uploaded_file($imagen['tmp_name']) AND move_uploaded_file($imagen['tmp_name'], $archivo_subido)) {
@@ -184,7 +184,7 @@ class NoticiaController {
                 $this->db->exec("UPDATE noticias SET titulo='".$titulo."' WHERE id='".$id."'");
                 $this->db->exec("UPDATE noticias SET entradilla='".$entradilla."' WHERE id='".$id."'");
                 $this->db->exec("UPDATE noticias SET texto='".$texto."' WHERE id='".$id."'");
-                $this->db->exec("UPDATE noticias SET imagen='".$ruta.$imagen."' WHERE id='".$id."'");
+                $this->db->exec("UPDATE noticias SET imagen='".$ruta.$imagen['name']."' WHERE id='".$id."'");
                 $this->db->exec("UPDATE noticias SET autor='".$_SESSION['usuario']."' WHERE id='".$id."'");
                 $this->db->exec("UPDATE noticias SET slug='".$slug."' WHERE id='".$id."'");
                 $this->db->commit();

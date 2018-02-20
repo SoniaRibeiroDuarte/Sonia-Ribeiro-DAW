@@ -31,6 +31,19 @@ class AppController {
         $this->view->vista("home",$noticias);
         
     }
+    function mostrarNoticia ($slug)
+    {
+        if ($slug) {
+            //Select con OBJ
+            $resultado = $this->db->query("SELECT * FROM noticias WHERE slug='" .$slug . "' LIMIT 1");
+            
+            while ($data = $resultado->fetch(\PDO::FETCH_OBJ)){ //Recorro el resultado
+            $noticias[] = new Noticia($data);
+            }
+            // Le paso los datos
+            $this->view->vista("mostrar_noticia",$noticias);
+        }
+    }
 
 }
 

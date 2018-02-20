@@ -9,12 +9,12 @@
         <div id="noticias">
             <?php foreach ($datos as $dato){ ?>
             
-                <?php $ruta = $_SESSION['home']."noticia/".$dato->slug ?>
+                <?php $ruta = $_SESSION['home']."noticia/".$dato->slug?>
                 <a class="noticia_enlace" href="<?php echo $ruta ?>"><div class="noticia"><?php echo $dato->titulo ?></div></a>
             
             <?php }?>   
         </div>
     </div>
 </div>
-
+ <?php require("partials/footer_home.php") ?>
 

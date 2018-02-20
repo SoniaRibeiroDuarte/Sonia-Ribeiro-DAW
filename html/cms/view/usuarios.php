@@ -2,21 +2,15 @@
 <?php require("partials/menu.php") ?>
 <?php require("partials/mensajes.php") ?>
     <div id="contusu">
-        <h2 id="titulous">Usuarios</h2>
-            <ul id="titulosus">
-                <li id="titizq">Usuarios
-                    <a class="acciones2" class="añadir"  href="<?php echo $_SESSION['home'] ?>panel/usuarios/crear">
-                        <i class="fas fa-plus"></i>
-                    </a>
-                </li>
-                <li id="titdrch">Acciones</li>
-            </ul>    
+        <h2 id="titulous">Usuarios
+            <a class="acciones2" class="añadir"  href="<?php echo $_SESSION['home'] ?>panel/usuarios/crear">
+                <i class="fas fa-plus"></i>
+            </a>
+        </h2>  
             <?php foreach ($datos as $dato){ ?>
                 <ul id="titulosus">
                     <li id="titizq">
-                        <a id="negro" href="">
-                            <?php echo $dato->usuario ?>
-                        </a>    
+                            <?php echo $dato->usuario ?>  
                     </li>
                     <li id="acciones">
                         <?php $ruta = $_SESSION['home']."panel/usuarios/editar/".$dato->id ?>

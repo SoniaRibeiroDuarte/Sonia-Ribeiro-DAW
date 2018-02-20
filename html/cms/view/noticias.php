@@ -2,14 +2,17 @@
 <?php require("partials/menu.php") ?>
 <?php require("partials/mensajes.php") ?>
     <div id="contusu">
-        <h2 id="titulous">Entradas <a class="acciones2" class="añadir"  href="<?php echo $_SESSION['home'] ?>panel/noticias/crear"><i class="fas fa-plus"></i></h2>
+        <h2 id="titulous">
+            Entradas 
+            <a class="acciones2" class="añadir"  href="<?php echo $_SESSION['home'] ?>panel/noticias/crear">
+                <i class="fas fa-plus"></i>
+            </a>
+        </h2>
    
             <?php foreach ($datos as $dato){ ?>
                 <ul id="titulosus">
                     <li id="titizq">
-                        <a id="negro" href="">
-                            <?php echo $dato->titulo ?>
-                        </a>    
+                        <?php echo $dato->titulo ?> 
                     </li>
                     <li id="acciones">
                         <?php $ruta = $_SESSION['home']."panel/noticias/editar/".$dato->id ?>

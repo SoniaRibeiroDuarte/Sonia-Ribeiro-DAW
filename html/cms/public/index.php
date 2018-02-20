@@ -79,24 +79,32 @@ function ruta2($array_ruta){
 */
 $array_ruta = explode("/",$ruta);
 
-if (count($array_ruta) == 4){
-
-    if ($array_ruta[0].$array_ruta[1] == "panelusuarios"){
-        if ($array_ruta[2] == "editar" OR
-            $array_ruta[2] == "borrar" OR
-            $array_ruta[2] == "desactivar" OR
-            $array_ruta[2] == "activar"){
-            $controller = new UsuarioController;
-            $accion = $array_ruta[2];
-            $id = $array_ruta[3];
-            //Llamo a la accion
-            $controller->$accion($id);
-        }else{
-            $controller = new AppController;
-            $controller->index();
+    if (count($array_ruta) == 2 && isset($array_ruta[1]) && $array_ruta[0] == 'noticia' && isset($array_ruta[1])) {
+        switch ($array_ruta[0]) {
+            case 'noticia':
+                $slug = $array_ruta[1];
+                //Instancio el controlador
+                $controller = new AppController;
+                //Le mando el panel de acceso
+                $controller->mostrarNoticia($slug);
+                break;
         }
+    }else if(count($array_ruta) == 4){
 
-
+        if ($array_ruta[0].$array_ruta[1] == "panelusuarios"){
+            if ($array_ruta[2] == "editar" OR
+                $array_ruta[2] == "borrar" OR
+                $array_ruta[2] == "desactivar" OR
+                $array_ruta[2] == "activar"){
+                $controller = new UsuarioController;
+                $accion = $array_ruta[2];
+                $id = $array_ruta[3];
+                //Llamo a la accion
+                $controller->$accion($id);
+            }else{
+                $controller = new AppController;
+                $controller->index();
+            }
 
     }else if ($array_ruta[0].$array_ruta[1] == "panelnoticias"){
         if ($array_ruta[2] == "editar" OR
