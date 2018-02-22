@@ -11,6 +11,7 @@
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="<?php echo '/cms/public/css/style.css'?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
     <title>Proyecto</title>
 </head>
 <body>

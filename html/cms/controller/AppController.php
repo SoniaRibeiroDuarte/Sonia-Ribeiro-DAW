@@ -31,6 +31,24 @@ class AppController {
         $this->view->vista("home",$noticias);
         
     }
+    public function todasNoticias() {
+        //Select con OBJ
+        $resultado = $this->db->query("SELECT * FROM noticias WHERE activo=1");
+        //Asigno la consulta a una variable
+        while ($data = $resultado->fetch(\PDO::FETCH_OBJ)){ //Recorro el resultado
+            $noticias[] = new Noticia($data);
+        }
+        
+        //Le paso los datos
+        $this->view->vista("todas_noticias",$noticias);
+        
+    }
+    public function contacto() {
+        
+        //Le paso los datos
+        $this->view->vista("contacto","");
+        
+    }
     function mostrarNoticia ($slug)
     {
         if ($slug) {

@@ -2,7 +2,7 @@
 
 ?>
     <div id="menu">
-        <img id ="logomenu" src="<?php echo '/cms/public/img/logo2.png'?>">
+        <img id ="logomenu" src="<?php echo '/cms/public/img/logoblanco.png'?>">
         <nav id="navmenu">
             <ul id="ulmenu">
                 <li class="limenu"><a class="amenu" href="<?php echo $_SESSION['home'] ?>panel">Inicio</a></li>

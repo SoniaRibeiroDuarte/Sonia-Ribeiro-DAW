@@ -71,10 +71,22 @@ body{
     background-color: #493831;
     
 }
+#menu_home{
+    height: 90px;
+    background-color: #493831;
+    
+}
 #logomenu{
    float: left;
    margin-left: 2%; 
    width: 150px;
+   margin-top: 5px;
+   margin-bottom: 5px;
+}
+#logomenu2{
+   float: left;
+   margin-left: 2%; 
+   width: 50px;
    margin-top: 5px;
    margin-bottom: 5px;
 }
@@ -184,6 +196,7 @@ hr{
     font: normal 16px/normal Arial, Helvetica, sans-serif;
     color: rgba(0,0,0,1)
 }
+
 .guardar{
   border: 0px;
   color: #ffffff;
@@ -207,7 +220,7 @@ hr{
 }
 
 /* Usuario*/
-/* Home */
+/* Home y noticias*/
 #contenedor_home{
 
 }
@@ -256,25 +269,36 @@ hr{
 #noticias{
     background-color: #FDEECD;
     margin-top: -70px;
-    margin-left: 4%;
-    margin-right: 4%;
+    margin-left: auto;
+    margin-right: auto;
     overflow: auto;
-    width: 88%;
+    width: 90%;
     padding-right: 2%;
     padding-left: 2%;
-    padding-top: 1%;
-    padding-bottom: 5%;
+    padding-bottom: 4%;
+    
+}
+#noticias2{
+    background-color: #FDEECD;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: auto;
+    width: 90%;
+    padding-right: 2%;
+    padding-left: 2%;
+    padding-bottom: 4%;
     
 }
 .noticia{
-    float:left;
-    width: 220px;
+    float: left;
+    width: 20%;
     height: 185px;
     padding-right: 20px;
     padding-bottom: 15px;
     text-align: right;
-    background-color: #493831;
-    margin-left: 2.5%;
+    background-size: cover !important;
+    margin-left: 1.7%;
+    margin-right: 1.5%;
     margin-top: 4%;
     display: flex;
     justify-content: flex-end;
@@ -283,14 +307,76 @@ hr{
     font-family: Montserrat,sans-serif;
     font-size: 20px;
     letter-spacing: .0625em;
+    filter: grayscale(100%);
     
 }
 .noticia:hover{
-    background-color: #D24858;
+    /*background: #D24858 !important;*/
+    filter: none;
+    transition:all 1s;
 }
 .noticia_enlace{
     text-decoration: none;
     color: whitesmoke;
+}
+/* Mostar Noticia */
+#contenedor_noticia{
+    background-color: #FDEECD;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+}
+#titulo_noticia{
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+#titulo_n{
+    letter-spacing: .0500em;
+    text-align: center;
+    color: #151515;
+}
+#imagen_noticia{
+    width: 100%;
+    margin-bottom: 50px;
+}
+#imagen_n{
+    margin-left: 25%;
+    margin-right: 25%;
+    width: 50%;
+}
+#entradilla_noticia{
+    letter-spacing: .0625em;
+    width: 100%;
+    margin-bottom: 50px;
+}
+#entradilla_n{
+    margin-left: 30%;
+    margin-right: 30%;
+    padding-left: 10px;
+    border-left: solid 2px #D24858;
+    color: #151515;
+}
+#texto_noticia{
+    width: 100%;
+    margin-bottom: 80px;
+    line-height: 1.6;
+}
+#texto_n{
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 80%;
+    color: #151515;
+}
+#autor_noticia{
+    width: 100%;
+    text-align: center
+}
+#autor_n{
+    color: #151515;
+    letter-spacing: .0500em;
+    font-style: oblique;
+    font-size: 14px;
 }
 /* Footer */
 #footer{
@@ -314,5 +400,198 @@ hr{
     margin-top: 18px;
 }
 @media only screen and (max-width: 768px) {
+#menu{
+    height: 90px;
+    background-color: #493831;
+    
+}
+#menu_home{
+    height: 70px;
+    background-color: #493831;
+    
+}
+#logomenu2{
+   float: left;
+   margin-left: 4%; 
+   width: 40px;
+   margin-top: 5px;
+   margin-bottom: 5px;
+}
+#navmenu{
+    float: right;
+    width: 82%;
+    padding-right: 2%;
+}
+#ulmenu{
+    float: right;
+    list-style-type: none;
+    margin-top: 20px;
+    
+}
+
+.amenu{
+    text-decoration: none;
+    color: #FDEECD;
+}
+.limenu{
+    border-bottom: solid 2px #493831;
+    float: left;
+    text-align: center;
+    padding: 2px 10px;
+    margin: 0px 10px;
+    height: 100%;
+    line-height: 25px;
+    font-size: 12px;
+}
+.limenu:hover{
+    border-bottom: solid 2px #D24858;
+}   
+/*home*/
+
+#banner{
+    padding-top: 40px;
+    background-image: url("../img/banner2.png");
+    background-size: cover;
+    height: 200px;
+    padding-bottom: 90px;
+}
+#logo_home{
+    width: 50%;
+    margin-left:25%;
+    margin-bottom: 10px;
+}
+#campo_buscar{
+    
+    margin-left:13.5%;
+    width: 40%;
+    display: inline-block;
+    box-sizing: content-box;
+    padding: 2px 20px;
+    border: 1px solid #FDEECD;
+    background-color: #FDEECD;
+    font: normal 16px/normal Arial, Helvetica, sans-serif;
+    color: rgba(0,0,0,1);
+}
+#buscar{
+  border: 0px;
+  color: #ffffff;
+  font-size: 16px;
+  background: #493831;
+  padding: 3.5px 20px;
+  text-decoration: none;
+  margin-left: -5px;
+  font-family: Montserrat,sans-serif;
+  letter-spacing: .0625em;
+}
+
+#buscar:hover {
+  background: #D24858;
+  text-decoration: none;
+}
+#noticias{
+    background-color: #FDEECD;
+    overflow: auto;
+    margin-top: -110px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.noticia{
+        float: left;
+        width: 42%;
+        height: 100px;
+        padding-right: 15px;
+        padding-bottom: 10px;
+        text-align: right;
+        background-size: cover !important;
+        margin-left: 1.5%;
+        margin-right: 1.5%;
+        display: flex;
+        justify-content: flex-end;
+        align-content: center;
+        flex-direction: column;
+        font-family: Montserrat,sans-serif;
+        font-size: 15px;
+        letter-spacing: .0625em;
+        filter: grayscale(100%);
+        background-color: #FDEECD;
+
+
+}
+/* Mostar Noticia */
+#contenedor_noticia{
+    background-color: #FDEECD;
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+}
+#titulo_noticia{
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+#titulo_n{
+    letter-spacing: .0500em;
+    text-align: center;
+    color: #151515;
+}
+#imagen_noticia{
+    width: 100%;
+    margin-bottom: 50px;
+}
+#imagen_n{
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 80%;
+}
+#entradilla_noticia{
+    letter-spacing: .0625em;
+    width: 100%;
+    margin-bottom: 50px;
+}
+#entradilla_n{
+    margin-left: 15%;
+    margin-right: 15%;
+    padding-left: 10px;
+    border-left: solid 2px #D24858;
+    color: #151515;
+}
+#texto_noticia{
+    width: 100%;
+    margin-bottom: 80px;
+    line-height: 1.6;
+}
+#texto_n{
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    width: 95%;
+    color: #151515;
+}
+#autor_noticia{
+    width: 100%;
+    text-align: center
+}
+#autor_n{
+    color: #151515;
+    letter-spacing: .0500em;
+    font-style: oblique;
+    font-size: 14px;
+}
+/*fotter*/
+#footer_home{
+    background: #EA8676;
+    height: 60px;
+}
+#logopie{
+    width:90px;
+    margin-left: 20px;
+    margin-top: 10px;
+    float: left;
+}
+#nombre{
+    width:90px;
+    float: right;
+    margin-right: 20px;
+    margin-top: 15px;
+}
 
 }

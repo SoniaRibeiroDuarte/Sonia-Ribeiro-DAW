@@ -184,7 +184,9 @@ class NoticiaController {
                 $this->db->exec("UPDATE noticias SET titulo='".$titulo."' WHERE id='".$id."'");
                 $this->db->exec("UPDATE noticias SET entradilla='".$entradilla."' WHERE id='".$id."'");
                 $this->db->exec("UPDATE noticias SET texto='".$texto."' WHERE id='".$id."'");
-                $this->db->exec("UPDATE noticias SET imagen='".$ruta.$imagen['name']."' WHERE id='".$id."'");
+                if (basename($imagen['name'])!= "") {
+                     $this->db->exec("UPDATE noticias SET imagen='".$ruta.$imagen['name']."' WHERE id='".$id."'");
+                }
                 $this->db->exec("UPDATE noticias SET autor='".$_SESSION['usuario']."' WHERE id='".$id."'");
                 $this->db->exec("UPDATE noticias SET slug='".$slug."' WHERE id='".$id."'");
                 $this->db->commit();

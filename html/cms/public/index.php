@@ -176,6 +176,18 @@ $array_ruta = explode("/",$ruta);
             //le mando al metodo index
             $controller->crear();
             break;
+        case 'todasnoticias':
+            //Instancio el controlador
+            $controller = new AppController;
+            //Le mando el panel de acceso
+            $controller->todasNoticias();
+            break;
+        case 'contacto':
+            //Instancio el controlador
+            $controller = new AppController;
+            //Le mando el panel de acceso
+            $controller->contacto();
+            break;
         default: //Instancio el controlador
             $controller = new AppController;
 
